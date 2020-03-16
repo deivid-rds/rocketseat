@@ -1,5 +1,5 @@
 <p align="center">
-  <img  src="https://pbs.twimg.com/profile_images/953595371875422210/0pWsfSSp_400x400.jpg" alt="Logo" style="height:200px">
+  <img  src="https://pbs.twimg.com/profile_images/953595371875422210/0pWsfSSp_200x200.jpg" alt="Logo">
 </p>
 
 <h1 align="center">Rocketseat<h1>
