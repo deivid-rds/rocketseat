@@ -43,7 +43,7 @@
 
             <section id="buttons">
 
-                <button>+ Adicionar Ideias</button>
+                <button onclick="onOff()">+ Adicionar Ideias</button>
                 <button class="fat">Ver Ideias</button>
 
             </section>
@@ -118,7 +118,7 @@
     </div>
 
     <!-- Modal -->
-    <div id="modal">
+    <div id="modal" class="hide">
         <div class="content">
 
             <h1>Nova Ideia</h1>
@@ -144,11 +144,12 @@
                     <label for="description">Digite uma descrição para essa ideia</label>
                     <textarea name="description" cols="30" rows="10"></textarea>
                 </div>
-                
+
                 <div class="input-wrapper"><label for="link">Link da ideia</label>
                     <input type="url" name="link">
                 </div>
 
+                <a href="#" onclick="onOff()">Voltar</a>
                 <button>Salvar</button>
 
             </form>
