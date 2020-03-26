@@ -2,11 +2,17 @@ const express = require('express');
 
 const app = express();
 
-// app.get('/', (request, response) => {
-//     return response.send('Hello Word');
-// });
+app.use(express.json());
 
-app.get('/', (request, response) => {
+// Rota: http://localhost:3000/users
+// Recurso: /users
+
+app.post('/users/', (request, response) => {
+
+    const body = request.body;
+
+    console.log(body);
+
     return response.json({
         evento: 'Semana OmniStack 11.0',
         aluno: 'Deivid Souza'
