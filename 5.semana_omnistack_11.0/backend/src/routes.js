@@ -17,4 +17,7 @@ routes.get('/incidents', IncidentController.index);
 // Cadastrar casos
 routes.post('/incidents', IncidentController.create);
 
+// Excluir casos
+routes.delete('/incidents/:id', IncidentController.delete);
+
 module.exports = routes;
