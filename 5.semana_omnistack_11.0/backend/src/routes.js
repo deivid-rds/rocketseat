@@ -11,6 +11,9 @@ routes.get('/ongs', OngController.index);
 // Cadastrar ongs
 routes.post('/ongs', OngController.create);
 
+// Listar casos
+routes.get('/incidents', IncidentController.index);
+
 // Cadastrar casos
 routes.post('/incidents', IncidentController.create);
 
