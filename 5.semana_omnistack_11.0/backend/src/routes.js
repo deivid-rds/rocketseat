@@ -5,6 +5,13 @@ const connection = require('./database/connection');
 
 const routes = express.Router();
 
+// Listar ongs
+routes.get('/ongs', async (request, response) => {
+    const ongs = await connection('ongs').select('*');
+
+    return response.json(ongs);
+});
+
 // Cadastrar ongs
 routes.post('/ongs', async (request, response) => {
 
