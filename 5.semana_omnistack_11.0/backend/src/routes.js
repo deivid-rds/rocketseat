@@ -2,6 +2,7 @@ const express = require('express');
 
 const OngController = require('./controllers/OngController');
 const IncidentController = require('./controllers/IncidentController');
+const ProfileController = require('./controllers/ProfileController');
 
 const routes = express.Router();
 
@@ -10,6 +11,9 @@ routes.get('/ongs', OngController.index);
 
 // Cadastrar ongs
 routes.post('/ongs', OngController.create);
+
+// Listar perfil
+routes.get('/profile', ProfileController.index);
 
 // Listar casos
 routes.get('/incidents', IncidentController.index);
