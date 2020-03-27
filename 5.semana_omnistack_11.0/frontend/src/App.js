@@ -6,9 +6,7 @@ import Header from './Header';
 
 function App() {
   return (
-    <Header>
-      Semana OmniStack
-    </Header>
+    <Header title="Semana OmniStack"/>
   );
 }
 
