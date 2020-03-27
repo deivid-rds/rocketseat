@@ -1,5 +1,5 @@
 <p align="center">
-  <img  src="https://user-images.githubusercontent.com/56767002/77602486-655aad00-6eec-11ea-9a3f-966fcd6e955c.png" alt="Logo">
+  <img  src="https://user-images.githubusercontent.com/56767002/77786740-11131280-703d-11ea-8d62-2682fa80bf34.jpg" alt="Logo">
 </p>
 
 <h2 align="center">O que você vai aprender?</h2>
