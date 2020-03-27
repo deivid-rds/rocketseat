@@ -1,8 +1,12 @@
 import React from 'react';
 
+import Header from './Header';
+
+// JSX (Java Script XML) = Quando temos HTML numa página .js
+
 function App() {
   return (
-    <h1>Hello World</h1>
+    <Header title="Semana OmniStack"/>
   );
 }
 
