@@ -2,13 +2,11 @@ import React from 'react';
 
 import './global.css';
 
-import Logon from './pages/Logon';
-
-// JSX (Java Script XML) = Quando temos HTML numa página .js
+import Routes from './routes';
 
 function App() {
   return (
-    <Logon />
+    <Routes />
   );
 }
 
