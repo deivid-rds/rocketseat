@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import Header from './Header';
+import './global.css';
+
+import Logon from './pages/Logon';
 
 // JSX (Java Script XML) = Quando temos HTML numa página .js
 
 function App() {
-  const [counter, setCounter] = useState(0);
-
-  // useState retorna array com 2 posições: Array [valor, funcaoDeAtualização]
-
-  function increment(){
-    setCounter(counter + 1);
-  }
-
   return (
-    <div>
-      <Header>Contador: {counter}</Header>
-      <button onClick={increment}>Incrementar</button>
-    </div>
+    <Logon />
   );
 }
 
