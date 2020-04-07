@@ -1,4 +1,5 @@
 const express = require('express');
+const { celebrate, Segments, Joi } = require('celebrate');
 
 const OngController = require('./controllers/OngController');
 const IncidentController = require('./controllers/IncidentController');
@@ -14,7 +15,15 @@ routes.post('/sessions', SessionController.create);
 routes.get('/ongs', OngController.index);
 
 // Cadastrar ongs
-routes.post('/ongs', OngController.create);
+routes.post('/ongs', celebrate({
+    [Segments.BODY]: Joi.object().keys({
+        name: Joi.string().required(),
+        email: Joi.string().required().email(),
+        whatsapp: Joi.number().required().min(10).max(11),
+        city: Joi.string().required(),
+        uf: Joi.string().required().length(2),
+    })
+}), OngController.create);
 
 // Listar perfil
 routes.get('/profile', ProfileController.index);
