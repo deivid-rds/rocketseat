@@ -33,7 +33,11 @@ routes.get('/profile', celebrate({
 }), ProfileController.index);
 
 // Listar casos
-routes.get('/incidents', IncidentController.index);
+routes.get('/incidents', celebrate({
+    [Segments.QUERY]: Joi.object().keys({
+        page: Joi.number(),
+    })
+}), IncidentController.index);
 
 // Cadastrar casos
 routes.post('/incidents', IncidentController.create);
