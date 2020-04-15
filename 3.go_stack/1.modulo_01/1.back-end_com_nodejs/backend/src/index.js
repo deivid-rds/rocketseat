@@ -24,14 +24,11 @@ app.post('/projects', (request, response) => {
 
     const { title, owner } = request.body;
 
-    console.log(title);
-    console.log(owner);
+    const project = { id: uuid(), title, owner };
 
-    return response.json([
-        'Projeto 1',
-        'Projeto 2',
-        'Projeto 3',
-    ]);
+    projects.push(project);
+
+    return response.json(project);
 });
 
 // Alterar informações
