@@ -8,6 +8,20 @@ app.use(express.json());
 
 const projects = [];
 
+function logRequests(request, response, next) {
+
+    const { method, url } = request;
+
+    const logLabel = `[${method.toUpperCase()} ${url}]`;
+
+    console.log(logLabel);
+
+    return next(); // chama o próximo middleware (ou rota)
+
+}
+
+app.use(logRequests);
+
 // Listar informações
 app.get('/projects', (request, response) => {
 
@@ -40,7 +54,7 @@ app.put('/projects/:id', (request, response) => {
 
     const projectIndex = projects.findIndex(project => project.id === id);
 
-    if(projectIndex < 0){
+    if (projectIndex < 0) {
         return response.status(400).json({ error: 'Project not found.' })
     }
 
@@ -62,7 +76,7 @@ app.delete('/projects/:id', (request, response) => {
 
     const projectIndex = projects.findIndex(project => project.id === id);
 
-    if(projectIndex < 0){
+    if (projectIndex < 0) {
         return response.status(400).json({ error: 'Project not found.' })
     }
 
@@ -73,5 +87,5 @@ app.delete('/projects/:id', (request, response) => {
 
 // Porta que fica sempre 'ouvindo'
 app.listen(3333, () => {
-    console.log('🚀️ Back-end started!'); 
+    console.log('🚀️ Back-end started!');
 });
