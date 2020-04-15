@@ -34,6 +34,7 @@ function validateProjectId(request, response, next) {
 }
 
 app.use(logRequests);
+app.use('/projects/:id', validateProjectId);
 
 // Listar informações
 app.get('/projects', (request, response) => {
@@ -60,7 +61,7 @@ app.post('/projects', (request, response) => {
 });
 
 // Alterar informações
-app.put('/projects/:id', validateProjectId, (request, response) => {
+app.put('/projects/:id', (request, response) => {
 
     const { id } = request.params;
     const { title, owner } = request.body;
@@ -83,7 +84,7 @@ app.put('/projects/:id', validateProjectId, (request, response) => {
 });
 
 // Deletar informações
-app.delete('/projects/:id', validateProjectId, (request, response) => {
+app.delete('/projects/:id', (request, response) => {
 
     const { id } = request.params;
 
