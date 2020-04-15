@@ -35,14 +35,23 @@ app.post('/projects', (request, response) => {
 app.put('/projects/:id', (request, response) => {
 
     const { id } = request.params;
+    const { title, owner } = request.body;
 
-    console.log(id);
+    const projectIndex = projects.findIndex(project => project.id === id);
 
-    return response.json([
-        'Projeto 4',
-        'Projeto 2',
-        'Projeto 3',
-    ]);
+    if(projectIndex < 0){
+        return response.status(400).json({ error: 'Project not found.' })
+    }
+
+    const project = {
+        id,
+        title,
+        owner,
+    };
+
+    projects[projectIndex] = project;
+
+    return response.json(project);
 });
 
 // Deletar informações
