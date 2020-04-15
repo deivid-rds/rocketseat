@@ -14,9 +14,11 @@ function logRequests(request, response, next) {
 
     const logLabel = `[${method.toUpperCase()} ${url}]`;
 
-    console.log(logLabel);
+    console.time(logLabel);
 
-    return next(); // chama o próximo middleware (ou rota)
+    next(); // chama o próximo middleware (ou rota)
+
+    console.timeEnd(logLabel);
 
 }
 
