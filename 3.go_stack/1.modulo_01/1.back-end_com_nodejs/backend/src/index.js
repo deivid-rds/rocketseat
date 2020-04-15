@@ -3,6 +3,8 @@ const express = require('express');
 
 const app = express();
 
+app.use(express.json());
+
 // Listar informações
 app.get('/projects', (request, response) => {
 
@@ -19,6 +21,12 @@ app.get('/projects', (request, response) => {
 
 // Gravar informações
 app.post('/projects', (request, response) => {
+
+    const { title, owner } = request.body;
+
+    console.log(title);
+    console.log(owner);
+
     return response.json([
         'Projeto 1',
         'Projeto 2',
