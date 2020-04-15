@@ -11,12 +11,13 @@ const projects = [];
 // Listar informações
 app.get('/projects', (request, response) => {
 
-    // const { title, owner } = request.query;
+    const { title } = request.query;
 
-    // console.log(title);
-    // console.log(owner);
+    const results = title
+        ? projects.filter(project => project.title.includes(title))
+        : projects;
 
-    return response.json([projects]);
+    return response.json([results]);
 });
 
 // Gravar informações
