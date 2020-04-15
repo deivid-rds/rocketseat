@@ -5,6 +5,12 @@ const app = express();
 
 // Listar informações
 app.get('/projects', (request, response) => {
+
+    const { title, owner } = request.query;
+
+    console.log(title);
+    console.log(owner);
+
     return response.json([
         'Projeto 1',
         'Projeto 2',
