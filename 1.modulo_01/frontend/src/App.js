@@ -15,9 +15,18 @@ function App() {
         });
     }, []);
 
-    function handleAddProject() {
-        setProjects([...projects, `Novo projeto ${Date.now()}`]);   
+    async function handleAddProject() {
+        //setProjects([...projects, `Novo projeto ${Date.now()}`]);   
         //'...projects' significa que estou trazendo o que essa variável já tem de conteúdo
+
+        const response = await api.post('projects', {
+            title: `Novo projeto ${Date.now()}`,
+	        owner: "Deivid Souza"
+        }); 
+
+        const project = response.data;
+
+        setProjects([...projects, project]);
     }
 
     return (
