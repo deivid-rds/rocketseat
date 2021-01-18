@@ -24,6 +24,7 @@ function logRequests(request, response, next) {
 
 }
 
+// Validar ID que está sendo enviado
 function validateProjectId(request, response, next) {
     
     const { id } = request.params;
